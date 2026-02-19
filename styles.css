@@ -90,6 +90,58 @@ h1 {
   filter: brightness(1.05);
 }
 
+.stress-list {
+  margin: 10px auto 0;
+  width: min(420px, 90%);
+  background: #f7f4ff;
+  border-radius: 16px;
+  padding: 8px 14px;
+  text-align: left;
+  box-shadow: 0 10px 20px rgba(122, 92, 255, 0.12);
+}
+
+.stress-list summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 10px 8px;
+  font-weight: 600;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stress-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.stress-list summary::after {
+  content: "▾";
+  font-size: 18px;
+  transition: transform 0.2s ease;
+}
+
+.stress-list[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.stress-list ul {
+  margin: 4px 0 10px;
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+}
+
+.stress-list a {
+  color: var(--accent-2);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.stress-list a:hover {
+  text-decoration: underline;
+}
+
 .footnote {
   color: var(--muted);
   margin: 0;
