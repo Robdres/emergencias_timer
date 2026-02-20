@@ -3,6 +3,9 @@ const targetDate = new Date("2026-04-07T00:00:00");
 const daysEl = document.getElementById("days");
 const hoursEl = document.getElementById("hours");
 const minutesEl = document.getElementById("minutes");
+const todoListEl = document.getElementById("todo-list");
+
+const tasks = ["celebrar a Roberto en su maestria"];
 
 const format = (value) => String(value).padStart(2, "0");
 
@@ -29,3 +32,7 @@ const updateCountdown = () => {
 
 updateCountdown();
 setInterval(updateCountdown, 60000);
+
+if (todoListEl) {
+  todoListEl.innerHTML = tasks.map((task) => `<li>${task}</li>`).join("");
+}
