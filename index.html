@@ -7,61 +7,117 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main class="card">
-      <h1>Tiempo para que termine emergencias y sobrevivas la rotación y seas muy feliz de haberla terminado :D </h1>
+    <main class="page">
+      <header class="hero">
+        <h1>
+          Tiempo para que termine emergencias y sobrevivas la rotación y seas muy feliz de haberla terminado :D
+        </h1>
+        <p class="subtitle">
+            Si se puedeeee <3 
+        </p>
+      </header>
 
-      <section class="countdown" aria-live="polite">
-        <div class="countdown-box">
-          <span id="days" class="countdown-number">—</span>
-          <span class="countdown-label">días</span>
-        </div>
-        <div class="countdown-box">
-          <span id="hours" class="countdown-number">—</span>
-          <span class="countdown-label">horas</span>
-        </div>
-        <div class="countdown-box">
-          <span id="minutes" class="countdown-number">—</span>
-          <span class="countdown-label">min</span>
+      <section class="timers" aria-label="Temporizadores">
+        <article class="timer-card" data-target="2026-04-07T00:00:00">
+          <h2>Fin de emergencias</h2>
+          <div class="countdown" aria-live="polite">
+            <div class="countdown-box">
+              <span class="countdown-number" data-unit="days">—</span>
+              <span class="countdown-label">días</span>
+            </div>
+            <div class="countdown-box">
+              <span class="countdown-number" data-unit="hours">—</span>
+              <span class="countdown-label">horas</span>
+            </div>
+            <div class="countdown-box">
+              <span class="countdown-number" data-unit="minutes">—</span>
+              <span class="countdown-label">min</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="timer-card" data-target="2026-08-31T00:00:00">
+          <h2>Cuenta regresiva: 31 de agosto</h2>
+          <div class="countdown" aria-live="polite">
+            <div class="countdown-box">
+              <span class="countdown-number" data-unit="days">—</span>
+              <span class="countdown-label">días</span>
+            </div>
+            <div class="countdown-box">
+              <span class="countdown-number" data-unit="hours">—</span>
+              <span class="countdown-label">horas</span>
+            </div>
+            <div class="countdown-box">
+              <span class="countdown-number" data-unit="minutes">—</span>
+              <span class="countdown-label">min</span>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="spotify" aria-labelledby="spotify-title">
+        <div class="spotify-card">
+          <h2 id="spotify-title">Playlist para respirar</h2>
+          <iframe
+            title="Spotify playlist"
+            src="https://open.spotify.com/embed/playlist/03PDYi32aTS9UNGS4pvKHp"
+            width="100%"
+            height="380"
+            frameborder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          ></iframe>
         </div>
       </section>
 
-      <a
-        class="cat-link"
-        href="https://www.youtube.com/watch?v=go1JSxBN0ww"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Si te estresas, toca aquí
-      </a>
+      <section class="content-grid">
+        <div class="stress-grid" aria-label="Listas de apoyo">
+          <details class="stress-list">
+            <summary>Si estás estresada</summary>
+            <ul>
+              <li>
+                <a
+                  href="https://www.youtube.com/watch?v=go1JSxBN0ww"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >Video 1</a>
+              </li>
+              <li>
+                <a
+                  href="https://www.youtube.com/watch?v=5qap5aO4i9A"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >Video 2</a>
+              </li>
+            </ul>
+          </details>
 
-      <section class="tasklist" aria-labelledby="tasklist-title">
-        <h2 id="tasklist-title">Cosas por hacer</h2>
-        <ul id="todo-list"></ul>
+          <details class="stress-list">
+            <summary>Si estás muy muy estresada</summary>
+            <ul>
+              <li>
+                <a
+                  href="https://www.youtube.com/watch?v=UojBaKX5Vz4&list=RDUojBaKX5Vz4&start_radio=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >Video 1</a>
+              </li>
+              <li>
+                <a
+                  href="https://www.youtube.com/watch?v=H1eAvX-8g08&list=RDH1eAvX-8g08&start_radio=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >Video 2</a>
+              </li>
+            </ul>
+          </details>
+        </div>
+
+        <section class="tasklist" aria-labelledby="tasklist-title">
+          <h2 id="tasklist-title">Cosas por hacer</h2>
+          <ul id="todo-list"></ul>
+        </section>
       </section>
-
-      <details class="stress-list">
-        <summary>Si estás muy muy estresada</summary>
-        <ul>
-          <li>
-            <a
-              href="https://www.youtube.com/watch?v=UojBaKX5Vz4&list=RDUojBaKX5Vz4&start_radio=1"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Video 1
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.youtube.com/watch?v=H1eAvX-8g08&list=RDH1eAvX-8g08&start_radio=1"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Video 2
-            </a>
-          </li>
-        </ul>
-      </details>
     </main>
 
     <script src="script.js"></script>

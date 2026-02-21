@@ -1,17 +1,28 @@
-const targetDate = new Date("2026-04-07T00:00:00");
-
-const daysEl = document.getElementById("days");
-const hoursEl = document.getElementById("hours");
-const minutesEl = document.getElementById("minutes");
+const timerCards = document.querySelectorAll(".timer-card");
 const todoListEl = document.getElementById("todo-list");
 
-const tasks = ["celebrar a Roberto en su maestria"];
+const tasks = ["celebrar a Roberto por su maestria"];
 
 const format = (value) => String(value).padStart(2, "0");
 
-const updateCountdown = () => {
+const updateCountdown = (card) => {
+  const targetValue = card.dataset.target;
+  const targetDate = targetValue ? new Date(targetValue) : null;
+
+  if (!targetDate || Number.isNaN(targetDate.getTime())) {
+    return;
+  }
+
   const now = new Date();
   const diffMs = targetDate - now;
+
+  const daysEl = card.querySelector('[data-unit="days"]');
+  const hoursEl = card.querySelector('[data-unit="hours"]');
+  const minutesEl = card.querySelector('[data-unit="minutes"]');
+
+  if (!daysEl || !hoursEl || !minutesEl) {
+    return;
+  }
 
   if (diffMs <= 0) {
     daysEl.textContent = "00";
@@ -30,8 +41,12 @@ const updateCountdown = () => {
   minutesEl.textContent = format(minutes);
 };
 
-updateCountdown();
-setInterval(updateCountdown, 60000);
+const updateAllCountdowns = () => {
+  timerCards.forEach((card) => updateCountdown(card));
+};
+
+updateAllCountdowns();
+setInterval(updateAllCountdowns, 60000);
 
 if (todoListEl) {
   todoListEl.innerHTML = tasks.map((task) => `<li>${task}</li>`).join("");
