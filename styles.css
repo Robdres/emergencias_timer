@@ -278,6 +278,19 @@ h1 {
   }
 
   .countdown {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .countdown-box {
+    padding: 10px 8px;
+  }
+
+  .countdown-number {
+    font-size: clamp(18px, 4.8vw, 24px);
+  }
+
+  .countdown-label {
+    font-size: 11px;
   }
 }
